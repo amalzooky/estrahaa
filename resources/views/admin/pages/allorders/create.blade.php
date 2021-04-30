@@ -195,7 +195,7 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div class="col-lg-3">
                                                         <div class="form-group">
                                                             <label for="projectinput1">  عدد المنتجات   </label>

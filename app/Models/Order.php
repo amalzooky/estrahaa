@@ -14,8 +14,8 @@ class Order extends Model
         'status_order', 'components_order','gifts',
         'num_products','total_price_products','discount',
         'shipping_price','total_value_order', 'shipping_company',
-        'policy_number','net_shipping','cost_order','order_won',
-        'nots','customer_evaluation', 'total_sales', 'profits',
+        'net_shipping','cost_order','order_won',
+        'nots','customer_evaluation',
         'created_at', 'updated_at'
     ];
 
