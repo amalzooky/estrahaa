@@ -72,11 +72,8 @@ class AllOrdersCntroller extends Controller
                 'order_won' => $request->order_won,
                 'cost_order' => $request->cost_order,
                 'net_shipping' => $request->net_shipping,
-                'policy_number' => $request->policy_number,
                 'nots' => $request->nots,
                 'customer_evaluation' => $request->customer_evaluation,
-                'total_sales' => $request->total_sales,
-                'profits' => $request->profits,
 
             ]);
         if (!empty($producrs)){

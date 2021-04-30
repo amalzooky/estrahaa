@@ -195,19 +195,7 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">  رقم البوليصة   </label>
-                                                            <input type="text" value="" id="name"
-                                                                   class="form-control"
-                                                                   placeholder="  "
-                                                                   name="policy_number">
-
-                                                            @error("policy_number")
-                                                            <span class="text-danger"> هذا الحقل مطلوب</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="col-lg-3">
                                                         <div class="form-group">
                                                             <label for="projectinput1">  عدد المنتجات   </label>
@@ -328,32 +316,7 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">  أجمالي المبيعات  </label>
 
-                                                            <input type="text" value="" id="name"
-                                                                   class="form-control"
-                                                                   placeholder="  "
-                                                                   name="total_sales">
-                                                            @error("total_sales")
-                                                            <span class="text-danger"> هذا الحقل مطلوب</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1">  الارباح  </label>
-
-                                                            <input type="text" value="" id="name"
-                                                                   class="form-control"
-                                                                   placeholder="  "
-                                                                   name="profits">
-                                                            @error("profits")
-                                                            <span class="text-danger"> هذا الحقل مطلوب</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-6">
