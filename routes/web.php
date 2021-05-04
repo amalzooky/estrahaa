@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+Route::group(['prefix'=>'/' , 'middleware' =>'auth'], function() {
+
 Route::get('/', 'DashboardController@index')->name('admin.dashboard');
 Route::get('/slidebar', 'DashboardController@sidebar')->name('admin.sidebar');
 
@@ -25,7 +29,8 @@ Route::get('/slidebar', 'DashboardController@sidebar')->name('admin.sidebar');
     Route::get('show/{id}','AllOrdersCntroller@show') -> name('admin.orders.show');
 
     Route::get('changeStatus/{id}','AllOrdersCntroller@changeStatus') -> name('admin.orders.status');
-
+       /* Mohamed Routes */
+       Route::get('get-product-info/{id}', 'AllOrdersCntroller@getProductInfo');
 });
 Route::group(['prefix' => 'bills'], function () {
     Route::get('/','BillsCntroller@index') -> name('admin.bills');
@@ -102,8 +107,26 @@ Route::group(['prefix' => 'stors'], function () {
     Route::get('changeStatus/{id}','ShippimgCompCntroller@changeStatus') -> name('admin.shippcomp.status');
 
 });
+Route::group(['prefix' => 'channels'], function () {
+    Route::get('/','ChannelsCompCntroller@index') -> name('admin.channels');
+    Route::get('create','ChannelsCompCntroller@create') -> name('admin.channels.create');
+    Route::post('store','ChannelsCompCntroller@store') -> name('admin.channels.store');
+    Route::get('edit/{id}','ChannelsCompCntroller@edit') -> name('admin.channels.edit');
+    Route::post('update/{id}','ChannelsCompCntroller@update') -> name('admin.channels.update');
+    Route::get('delete/{id}','ChannelsCompCntroller@destroy') -> name('admin.channels.delete');
+    Route::get('show/{id}','ChannelsCompCntroller@show') -> name('admin.channels.show');
+
+    Route::get('changeStatus/{id}','ChannelsCompCntroller@changeStatus') -> name('admin.channels.status');
+
+});
 
 //
 //Route::get('/', function () {
 //    return view('welcome');
-//});
+});
+
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Route::get('/home', 'HomeController@index')->name('home');

@@ -22,7 +22,8 @@ class AllReportsCntroller extends Controller
         $income = DB::table('acountes')->sum('income');
         $covenant = DB::table('acountes')->sum('covenant');
         $balance = DB::table('balance')->sum('treasury_balance');
-        $balances = Abalancs::all()->first();
+        $balances = Abalancs::all()->last();
+
 
         $profitLoss = $expenses + $income +$total_price - $income ;
         $current_balance = $profitLoss+$balance;
@@ -43,7 +44,7 @@ class AllReportsCntroller extends Controller
 //        $covenant = DB::table('acountes')
 //            ->selectRaw('sum(covenant)')
 //            -> get();
-        return view ('admin.pages.repotss.index', compact('profitLoss', 'balance', 'current_balance', 'counts', 'covenant', 'expenses',  'buy_price','total_price' ));
+        return view ('admin.pages.repotss.index', compact('profitLoss', 'balances', 'balance', 'current_balance', 'counts', 'covenant', 'expenses',  'buy_price','total_price' ));
     }
 
 }

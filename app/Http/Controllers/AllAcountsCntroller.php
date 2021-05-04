@@ -17,7 +17,7 @@ class AllAcountsCntroller extends Controller
     {
         $allacount = Acounte::all();
 
-        $balance = Abalancs::all()->first();
+        $balance = Abalancs::all()->last();
 
 
 //        $expenses = DB::table('sum(expenses)')->get();
@@ -68,9 +68,9 @@ class AllAcountsCntroller extends Controller
 //        dd($sliders);
 //        return redirect()->route('admin.acounts')->with(['success' => 'تم الحفظ بنجاح']);
 //    } catch (\Exception $ex) {
-return redirect()->route('admin.acounts')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        return redirect()->route('admin.acounts')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
 
-}
+    }
 
 
 
@@ -78,7 +78,7 @@ return redirect()->route('admin.acounts')->with(['error' => 'حدث خطا ما 
     public function showbalancs($id)
     {
 
-        $balance = Acounte::select('treasury_balance')->where('id', $id)->get();
+        $balance = Acounte::select('treasury_balance')->where('id', $id)->get()->last();
         return view ('admin.pages.allacounts.index', compact('balance','income' ,'expenses','covenant'));
 
 
@@ -189,4 +189,3 @@ return redirect()->route('admin.acounts')->with(['error' => 'حدث خطا ما 
 
 
 }
-

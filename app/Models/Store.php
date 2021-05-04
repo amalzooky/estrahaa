@@ -10,7 +10,7 @@ class Store extends Model
 
     protected $fillable = [
         'product_name', 'count_proud', 'description',
-        'buy_price', 'selling_price', 'total_price',
+        'buy_price', 'selling_price', 'total_price', 'total_amount', 'amout', 'tax_amount',
         'active',
         'created_at', 'updated_at'
     ];

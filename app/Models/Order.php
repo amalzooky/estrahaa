@@ -15,7 +15,7 @@ class Order extends Model
         'num_products','total_price_products','discount',
         'shipping_price','total_value_order', 'shipping_company',
         'net_shipping','cost_order','order_won',
-        'nots','customer_evaluation',
+        'nots','customer_evaluation', 'products_details',
         'created_at', 'updated_at'
     ];
 

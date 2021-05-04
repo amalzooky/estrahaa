@@ -38,8 +38,7 @@
                           <ul>
 
                             </li>
-                            <li><a class="dropdown-item" href="#"><i class="la la-hdd-o"></i> Second level, third link</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="la la-floppy-o"></i> Second level, fourth link</a></li>
+
                           </ul>
                         </li>
 
@@ -56,9 +55,7 @@
                       <div class="card-collapse collapse show" id="accordionOne" role="tabpanel" aria-labelledby="headingOne"
                       aria-expanded="true">
                         <div class="card-content">
-                          <p class="accordion-text text-small-3">Caramels dessert chocolate cake pastry jujubes bonbon.
-                            Jelly wafer jelly beans. Caramels chocolate cake liquorice
-                            cake wafer jelly beans croissant apple pie.</p>
+
                         </div>
                       </div>
                       <div class="card-header p-0 pb-2 border-0" id="headingTwo" role="tab"><a class="collapsed" data-toggle="collapse" data-parent="#accordionWrap"
@@ -66,9 +63,7 @@
                       <div class="card-collapse collapse" id="accordionTwo" role="tabpanel" aria-labelledby="headingTwo"
                       aria-expanded="false">
                         <div class="card-content">
-                          <p class="accordion-text">Sugar plum bear claw oat cake chocolate jelly tiramisu
-                            dessert pie. Tiramisu macaroon muffin jelly marshmallow
-                            cake. Pastry oat cake chupa chups.</p>
+
                         </div>
                       </div>
                       <div class="card-header p-0 pb-2 border-0" id="headingThree" role="tab"><a class="collapsed" data-toggle="collapse" data-parent="#accordionWrap"
@@ -76,9 +71,7 @@
                       <div class="card-collapse collapse" id="accordionThree" role="tabpanel" aria-labelledby="headingThree"
                       aria-expanded="false">
                         <div class="card-content">
-                          <p class="accordion-text">Candy cupcake sugar plum oat cake wafer marzipan jujubes
-                            lollipop macaroon. Cake dragée jujubes donut chocolate
-                            bar chocolate cake cupcake chocolate topping.</p>
+
                         </div>
                       </div>
                     </div>
@@ -132,27 +125,36 @@
           <ul class="nav navbar-nav float-right">
             <li class="dropdown dropdown-user nav-item">
               <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                <span class="mr-1">Hello,
-                  <span class="user-name text-bold-700">John Doe</span>
+                <span class="mr-1">مرحبا
+                  <span class="user-name text-bold-700">                                    {{ Auth::user()->name }}
+</span>
                 </span>
                 <span class="avatar avatar-online">
-                  <img src="../../../app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span>
+                  <img src="{{asset('back/images/Picture1.png')}}" alt="avatar"><i></i></span>
               </a>
-              <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
-                <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
-                <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
-                <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="ft-power"></i> Logout</a>
+              <div class="dropdown-menu dropdown-menu-right">
+
+
+                      <a class="dropdown-item" href=" {{ route('logout') }}"
+                         onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                          <i class="ft-power"></i>
+                          تسجيل خروج                      </a>
+
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                          @csrf
+                      </form>
+
               </div>
             </li>
-            <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-gb"></i><span class="selected-language"></span></a>
-              <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i> English</a>
-                <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a>
-                <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a>
-                <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> German</a>
-              </div>
-            </li>
+{{--            <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"--}}
+{{--              aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-gb"></i><span class="selected-language"></span></a>--}}
+{{--              <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i> English</a>--}}
+{{--                <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a>--}}
+{{--                <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a>--}}
+{{--                <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> German</a>--}}
+{{--              </div>--}}
+{{--            </li>--}}
 
           </ul>
         </div>

@@ -53,7 +53,7 @@ class BillsCntroller extends Controller
     public function show($id)
     {
         try{
-            $orders = Bill::find($id);
+            $bilss = Bill::first();
             // $vendor = DB::table('vendors')->select('vendors.*', 'schools_items.school_name')
             //     ->leftJoin('schools_items', 'schools_items.school_id', '=', 'vendors.school')
             //     ->where('vendors.id', $id)->first();

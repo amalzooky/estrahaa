@@ -61,10 +61,13 @@ class AllStorsCntroller extends Controller
 
 
             $product_name = $request->product_name;
-            $count = $request->count;
+            $count = $request->count_proud;
             $buy_price = $request->buy_price;
             $total_price = $request->total_price;
             $selling_price = $request->selling_price;
+            $total_amount = $request->total_amount;
+            $amout = $request->amout;
+            $tax_amount = $request->tax_amount;
             $description = $request->description;
             $active = $request->active;
 
@@ -74,11 +77,14 @@ class AllStorsCntroller extends Controller
 
             $allorders = Store::create([
                 'product_name' => $product_name,
-                'count' => $count,
+                'count_proud' => $count,
                 'description' => $description,
                 'buy_price' => $buy_price,
                 'selling_price' => $selling_price,
                 'total_price' => $total_price,
+                'tax_amount' => $tax_amount,
+                'amout' => $amout,
+                'total_amount' => $total_amount,
                 'active' => $active,
 
 
@@ -120,30 +126,30 @@ class AllStorsCntroller extends Controller
 
     public function edit($ord_id)
     {
-        $allorders = Store::find($ord_id);
+        $allstors = Store::find($ord_id);
 
-        if (!$allorders)
+        if (!$allstors)
             return redirect()->route('admin.stors')->with(['error' => 'هذا القسم غير موجود ']);
 
-        return view('admin.pages.allstors.edit', compact('allorders'));
+        return view('admin.pages.allstors.edit', compact('allstors'));
     }
-    public  function update($ord_id ,AllOrdrsRequest  $request)
+    public  function update($sort_id ,Request  $request)
 
     {
-        try {
+//        try {
 
-            $allorders = Store::find($ord_id);
-            if (!$allorders)
+            $allsors = Store::find($sort_id);
+            if (!$allsors)
                 return redirect()->route('admin.stors')->with(['error' => 'هذا القسم غير موجود ']);
             //update data
-            $allorders->update($request->all());
+            $allsors->update($request->all());
 
 
             return redirect()->route('admin.stors')->with(['success' => 'تم ألتحديث بنجاح']);
-        } catch (\Exception $ex) {
-
-            return redirect()->route('admin.stors')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
-        }
+//        } catch (\Exception $ex) {
+//
+//            return redirect()->route('admin.stors')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+//        }
     }
     public function destroy($id)
     {

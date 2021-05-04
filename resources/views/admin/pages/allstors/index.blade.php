@@ -56,7 +56,7 @@
 
 <tr>
 <th>الكل</th>
-    <td style="color: red">اجمالي عدد المخزون الفعلي{{ $counts }}</td>
+    <td style="color: red">اجمالي عدد المخزون الكلي{{ $counts }}</td>
 
     <td style="color: red">أجمالي قيمة المخزون:{!!$total_price!!}</td>
                                             <td style="color: red">أجمالي سعر المخزون: {{ $buy_price }}</td>

@@ -1,7 +1,7 @@
 <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true">
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a href="{{route('admin.dashboard')}}"><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main">الرئسية</span><span class="badge badge badge-info badge-pill float-right mr-2">3</span></a>
+            <li class=" nav-item"><a href="{{route('admin.dashboard')}}"><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main">الرئسية</span></a>
 
             </li>
             <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">العمليات </span></a>
@@ -26,12 +26,22 @@
 
                         </ul>
                     </li>
+                    <li><a class="menu-item" href="{{route('admin.channels')}}" data-i18n="nav.templates.vert.main">قنوات البيع  </a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="{{route('admin.channels')}}"
+                                   data-i18n="nav.templates.vert.classic_menu">كل قنوات البيع</a>
+                            </li>
+                            <li><a class="menu-item" href="{{route('admin.channels.create')}}">أضافة قناه بيع </a>
+                            </li>
+
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
 
 
-            <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">الاوردرات</span></a>
+            <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.templates.main">الاوردرات</span><span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Order::count()}}</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{route('admin.orders')}}" data-i18n="nav.templates.vert.main">كل الاوردرات</a>
 
@@ -52,7 +62,7 @@
 
 {{--                </ul>--}}
 {{--            </li>--}}
-     <li class=" nav-item"><a href="#"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">بوليصة الشحن</span><span class="badge badge badge-pill badge-danger float-right mr-2">New</span></a>
+     <li class=" nav-item"><a href="#"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">بوليصة الشحن</span><span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Bill::count()}}</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{route('admin.bills.create')}}" data-i18n="nav.page_layouts.1_column">عمل بوليضه</a>
                     </li>
@@ -63,7 +73,7 @@
 
                 </ul>
             </li>
-<li class=" nav-item"><a href="#"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">حسابات </span><span class="badge badge badge-pill badge-danger float-right mr-2">New</span></a>
+<li class=" nav-item"><a href="#"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">حسابات </span><span class="badge badge badge-info badge-pill float-right mr-2">{{App\Models\Acounte::count()}}</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{route('admin.acounts.create')}}" data-i18n="nav.page_layouts.1_column">أضافه</a>
                     </li>
@@ -76,18 +86,18 @@
                 </ul>
             </li>
 
-<li class=" nav-item"><a href="#"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">المخزن </span><span class="badge badge badge-pill badge-danger float-right mr-2">New</span></a>
+<li class=" nav-item"><a href="#"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">المخزن </span><span class="badge badge badge-pill badge-danger float-right mr-2">{{App\Models\Store::count()}}</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{route('admin.stors.create')}}" data-i18n="nav.page_layouts.1_column">أضافه</a>
                     </li>
-                    <li><a class="menu-item" href="{{route('admin.stors')}}" data-i18n="nav.page_layouts.2_columns">تقارير</a>
+                    <li><a class="menu-item" href="{{route('admin.stors')}}" data-i18n="nav.page_layouts.2_columns">كل المخزون</a>
                     </li>
 
 
 
                 </ul>
             </li>
-<li class=" nav-item"><a href="{{route('admin.reports')}}"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">التقارير </span><span class="badge badge badge-pill badge-danger float-right mr-2">New</span></a>
+<li class=" nav-item"><a href="{{route('admin.reports')}}"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">التقارير </span></a>
 
             </li>
 

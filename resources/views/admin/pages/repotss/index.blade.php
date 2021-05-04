@@ -63,7 +63,7 @@
                                             <tbody>
                                                     <tr>
                                                         <th>  رصيد الخزنه  </th>
-                                                        <td>{!!$balance!!}</td>
+                                                        <td>{!!$balances!!}</td>
                                                     </tr> <tr>
                                                         <th> أجمالي الايرادات  </th>
                                                         <td>{!!$expenses!!}</td>

@@ -414,6 +414,9 @@
                         </div>
                     </div>
                     <table border="1" cellspacing="0" cellpadding="0">
+                        @php
+                            $products = !empty($orders->products_details) ? unserialize($orders->products_details) : null;
+                        @endphp
                         <thead>
                         <tr>
                             <th>م</th>
@@ -425,16 +428,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-
-                            <td class="no">01</td>
-                            <td class="text-left">{{$orders->components_order}}</td>
-                            <td class="unit">{{$orders->num_products}}</td>
-                            <td class="tax">{{$orders->num_products}}</td>
-                            <td class="total"></td>
-
-
-                        </tr>
+                        @if(!empty($products))
+                            @foreach($products as $product)
+{{--                                @php(var_dump($order))--}}
+                                <tr>
+                                    <td class="no">{{$product['id']}}</td>
+                                    <td class="text-left">{{$product['name']}}</td>
+                                    <td class="unit">{{$product['description']}}</td>
+                                    <td class="tax">{{$product['count']}}</td>
+                                    <td class="total">{{$product['selling-price'] * $product['count']}}</td>
+                                </tr>
+                            @endforeach
+                        @endif
                         </tbody>
                         <tfoot>
                         <tr>
@@ -460,6 +465,84 @@
                         <div class="notice">للعميل الحق بالمطالبه بقيمة الاوردر او استبداله باي منتج متاح على الويب سايت  في خلال 14 يوم من تاريخ استلام الاوردر بشرط ان يكون المنتج والكرتونه بنفس حالة الاستلام - اذا كان بالمنتج عيب او غير مطابق لمواصفات المنتج على الويب سايت كان للعميل الحق في الاستبدال او الاسترجاع مجانا بدون مصاريف شحن - واذا كان مطابق للوصف والصور  يدفع العميل 55 جنية قيمة شحن الاوردر -- استرداد قيمة الاوردر عن طريق فودافون كاش او البريد المصري</div>
                     </div>
                 </main>
+                <hr>
+                <div class="invoice overflow-auto">
+                    <div style="min-width: 600px">
+
+
+                        <table border="1"  cellpadding="0">
+                            <thead>
+                            <tr>
+                                <th>  راسل الشحنه </th>
+                                <th>عنوان الراسل</th>
+                                <th>المرسل اليه  </th>
+                                <th>عنوان المرسل اليه </th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+
+                                <td class="text-left">{{$bilss->send_name}}</td>
+                                <td class="unit">{{$bilss->send_addres}}</td>
+                                <td class="tax">{{$orders->name_clinte}}</td>
+                                <td class="tax">{{$orders->receive_addres}}</td>
+
+
+                            </tr>
+                            </tbody>
+                            <thead>
+                            <tr>
+                                <th>رقم التليفون  </th>
+                                <th>طريقة التحصيل </th>
+                                <th>  رقم الطلب  </th>
+                                <th>رقم التليفون المرسل اليه </th>
+
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+
+                                <td class="text-left">{{$bilss->send_phone}}</td>
+                                <td class="unit">{{$orders->payment_method}}</td>
+                                <td class="tax">{{$orders->no_order}}</td>
+                                <td class="tax">{{$orders->num_phone}}</td>
+
+
+
+                            </tr>
+                            </tbody>
+                            <thead>
+                            <tr>
+                                <th> تاريخ التوصل </th>
+                                <th>  </th>
+                                <th> أجمالي قيمة التحصيل</th>
+                                <th></th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+
+                                <td class="text-left">{{$orders->date_arrive}}</td>
+                                <td class="text-left"></td>
+
+                                <td class="unit">{{$orders->paymen_total}}</td>
+                                <td class="text-left"></td>
+
+
+
+
+                            </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+                    <div></div>
+                </div>
                 <footer>
 {{--                    Invoice was created on a computer and is valid without the signature and seal.--}}
                 </footer>

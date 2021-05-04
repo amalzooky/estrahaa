@@ -205,6 +205,7 @@
             }
         }
     </style>
+
     <div id="invoice">
 
         <div class="app-content content">
@@ -238,9 +239,9 @@
                         <tbody>
                         <tr>
 
-                            <td class="text-left">{{$orders->send_name}}</td>
-                            <td class="unit">{{$orders->send_addres}}</td>
-                            <td class="tax">{{$orders->receiv_name}}</td>
+                            <td class="text-left">{{$bilss->send_name}}</td>
+                            <td class="unit">{{$bilss->send_addres}}</td>
+                            <td class="tax">{{$orders->name_clinte}}</td>
                             <td class="tax">{{$orders->receive_addres}}</td>
 
 
@@ -259,10 +260,10 @@
                         <tbody>
                         <tr>
 
-                            <td class="text-left">{{$orders->send_phone}}</td>
+                            <td class="text-left">{{$bilss->send_phone}}</td>
                             <td class="unit">{{$orders->payment_method}}</td>
                             <td class="tax">{{$orders->no_order}}</td>
-                            <td class="tax">{{$orders->receiv_phone}}</td>
+                            <td class="tax">{{$orders->num_phone}}</td>
 
 
 
